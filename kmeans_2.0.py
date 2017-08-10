@@ -8,7 +8,7 @@ nbar = xarr0
 nodata=-9999
 medians1={}
 for band in bands:
-    datos=nbar.data_vars[band]
+    datos=nbar.data_vars[band].values
     allNan=~np.isnan(datos)
     if normalized:
         m=np.nanmean(datos.reshape((datos.shape[0],-1)), axis=1)
